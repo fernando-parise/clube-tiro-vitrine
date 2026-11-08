@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parabellum Jaraguá — Clube de Caça e Tiro</title>
+<meta name="description" content="Escola e Clube de Caça e Tiro, loja de armas e munições e despachante em Jaraguá do Sul – SC. IPSC, tiro defensivo e cursos.">
+<meta name="theme-color" content="#0a0a0b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='12' fill='%230a0a0b'/%3E%3Ccircle cx='12' cy='12' r='7' fill='none' stroke='%23c8102e' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='2.2' fill='%23c8102e'/%3E%3C/svg%3E">
+<!-- Pré-visualização ao compartilhar o link (WhatsApp, Instagram etc.). Depois de publicar, troque og:image pela URL absoluta da imagem. -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Parabellum Jaraguá — Clube de Caça e Tiro">
+<meta property="og:description" content="IPSC, tiro defensivo, cursos, loja e despachante em Jaraguá do Sul – SC.">
+<meta property="og:image" content="assets/img/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0b; --bg-2:#111114; --bg-3:#18181c; --line:#26262b;
+  --red:#c8102e; --red-2:#8f0b20; --red-glow:rgba(200,16,46,.45);
+  --text:#f4f4f5; --muted:#a1a1aa; --dim:#71717a;
+  --wa:#25d366;
+  --radius:14px; --max:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.display{font-family:Anton,Impact,sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:.95;font-weight:400}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--red)}
+.red{color:var(--red)}
+
+/* grain overlay */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 26px;border-radius:999px;font-weight:700;font-size:15px;letter-spacing:.02em;transition:transform .2s,box-shadow .2s,background .2s,border-color .2s;cursor:pointer;border:2px solid transparent;white-space:nowrap}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 10px 30px -8px var(--red-glow)}
+.btn-red:hover{transform:translateY(-2px);box-shadow:0 16px 40px -8px var(--red-glow);background:#dc1434}
+.btn-ghost{border-color:#3f3f46;color:var(--text)}
+.btn-ghost:hover{border-color:var(--text);transform:translateY(-2px)}
+.btn-wa{background:var(--wa);color:#06260f}
+.btn-wa:hover{transform:translateY(-2px);filter:brightness(1.08)}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(10,10,11,.82);backdrop-filter:blur(14px);border-color:var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{width:44px;height:44px;border-radius:50%;border:2px solid var(--red);display:grid;place-items:center;background:var(--bg-2)}
+.brand-mark{overflow:hidden}
+.brand-mark svg{width:24px;height:24px}
+.brand-mark img{width:100%;height:100%;object-fit:cover}
+.brand-mark img + svg{display:none}
+.brand-txt{font-family:Anton,sans-serif;font-size:20px;letter-spacing:.04em;line-height:1}
+.brand-txt small{display:block;font-family:Inter,sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.28em;color:var(--muted);margin-top:4px}
+.nav-links{display:flex;gap:32px;font-size:14px;font-weight:600;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{padding:11px 20px;font-size:14px}
+.burger{display:none;background:none;border:0;color:var(--text);cursor:pointer;padding:8px}
+.burger svg{width:28px;height:28px}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-2;
+  background:
+    radial-gradient(ellipse 60% 70% at 78% 45%, rgba(200,16,46,.28), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 10% 100%, rgba(200,16,46,.12), transparent 70%),
+    linear-gradient(90deg,#0a0a0b 30%,rgba(10,10,11,.72) 62%,rgba(10,10,11,.45) 100%)}
+/* Foto do estande: salve como assets/img/hero.jpg (horizontal, ~1920px). Sem o arquivo, o fundo fica só escuro. */
+.hero-photo{position:absolute;inset:0;z-index:-3;background:#0a0a0b url('assets/img/hero.jpg') 70% center/cover no-repeat}
+.hero-grid{position:absolute;inset:0;z-index:-1;opacity:.35;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:64px 64px;mask-image:radial-gradient(ellipse 70% 70% at 70% 50%,#000 20%,transparent 75%)}
+.hero-in{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:600;background:rgba(17,17,20,.7);margin-bottom:28px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--dim)}
+.status.open .dot{background:var(--wa);box-shadow:0 0 0 0 rgba(37,211,102,.6);animation:pulse 2s infinite}
+.status.closed .dot{background:var(--red)}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.hero h1{font-size:clamp(56px,9vw,124px)}
+.hero h1 .outline{color:transparent;-webkit-text-stroke:2px var(--text)}
+.hero h1 .slash{display:inline-block;background:var(--red);color:#fff;padding:0 .18em;transform:skewX(-8deg);margin-top:.06em}
+.hero p.lead{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:540px;margin:28px 0 36px}
+.hero p.lead strong{color:var(--text);font-weight:600}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:40px;margin-top:56px;padding-top:28px;border-top:1px solid var(--line);flex-wrap:wrap}
+.stat b{display:block;font-family:Anton,sans-serif;font-size:36px;font-weight:400;line-height:1}
+.stat span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:600}
+
+/* reticle */
+.reticle{position:relative;aspect-ratio:1;width:100%;max-width:480px;justify-self:center}
+.reticle svg{width:100%;height:100%;overflow:visible}
+.ret-spin{transform-origin:50% 50%;animation:spin 40s linear infinite}
+.ret-spin-r{transform-origin:50% 50%;animation:spin 60s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ret-dot{animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{50%{opacity:.35}}
+.reticle-tag{position:absolute;font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;background:var(--bg-2);border:1px solid var(--line);padding:6px 10px;border-radius:6px}
+.reticle-tag.t1{top:14%;right:-2%}
+.reticle-tag.t2{bottom:16%;left:-4%}
+.reticle-tag b{color:var(--red)}
+
+/* marquee */
+.marquee{background:var(--red);overflow:hidden;padding:18px 0;transform:rotate(-1.2deg) scale(1.02);margin:-8px 0;position:relative;z-index:2;box-shadow:0 20px 50px -20px var(--red-glow)}
+.marquee-track{display:flex;gap:48px;width:max-content;animation:scroll 28s linear infinite}
+.marquee span{font-family:Anton,sans-serif;font-size:26px;letter-spacing:.06em;color:#fff;display:flex;align-items:center;gap:48px;white-space:nowrap}
+.marquee span::after{content:"";width:12px;height:12px;border:2px solid #fff;border-radius:50%}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:120px 0;position:relative}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(42px,6vw,76px);margin-top:16px}
+.sec-head p{color:var(--muted);max-width:420px}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.svc{position:relative;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:32px 26px 28px;overflow:hidden;transition:transform .3s,border-color .3s;display:flex;flex-direction:column;min-height:340px}
+.svc::before{content:"";position:absolute;inset:auto -40% -60% auto;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,var(--red-glow),transparent 70%);opacity:0;transition:opacity .4s}
+.svc:hover{transform:translateY(-6px);border-color:var(--red-2)}
+.svc:hover::before{opacity:1}
+.svc-num{font-family:Anton,sans-serif;font-size:14px;color:var(--dim);letter-spacing:.1em}
+.svc-ico{width:56px;height:56px;border-radius:12px;background:var(--bg-3);border:1px solid var(--line);display:grid;place-items:center;margin:22px 0 26px;color:var(--red)}
+.svc-ico svg{width:28px;height:28px}
+.svc h3{font-family:Anton,sans-serif;font-weight:400;font-size:28px;line-height:1;text-transform:uppercase;margin-bottom:12px}
+.svc p{color:var(--muted);font-size:15px;flex:1}
+.svc a{margin-top:22px;font-size:14px;font-weight:700;display:inline-flex;align-items:center;gap:8px;color:var(--text)}
+.svc a svg{width:16px;height:16px;transition:transform .2s}
+.svc a:hover svg{transform:translateX(4px)}
+
+/* programs */
+.programs{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.prog-grid{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:auto auto;gap:16px}
+.prog{position:relative;border-radius:var(--radius);overflow:hidden;padding:34px;min-height:260px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--bg-3);border:1px solid var(--line);isolation:isolate}
+.prog::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;background-image:repeating-linear-gradient(135deg,transparent 0 22px,rgba(255,255,255,.025) 22px 23px)}
+.prog.big{grid-row:span 2;min-height:520px;background:linear-gradient(160deg,#2a0610 0%,#120306 55%,#0a0a0b 100%)}
+.prog.big .prog-bigtxt{position:absolute;top:24px;right:-10px;font-family:Anton,sans-serif;font-size:180px;line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(200,16,46,.45);z-index:-1;letter-spacing:-.02em}
+.prog .tag{align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;background:var(--red);color:#fff;padding:5px 10px;border-radius:4px;margin-bottom:18px}
+.prog h3{font-family:Anton,sans-serif;font-weight:400;font-size:40px;line-height:.95;text-transform:uppercase;margin-bottom:12px}
+.prog.big h3{font-size:64px}
+.prog p{color:var(--muted);max-width:420px}
+.prog ul{list-style:none;margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+.prog li{font-size:12.5px;font-weight:600;padding:6px 12px;border:1px solid #3f3f46;border-radius:999px;color:#d4d4d8}
+
+/* safety */
+.safety-in{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:start}
+.safety-in h2{font-size:clamp(42px,5.5vw,72px);margin:16px 0 24px}
+.safety-in > div > p{color:var(--muted);margin-bottom:32px;max-width:440px}
+.rules{display:grid;gap:12px;counter-reset:r}
+.rule{display:grid;grid-template-columns:64px 1fr;gap:20px;align-items:center;padding:22px 24px;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);counter-increment:r;transition:border-color .25s,background .25s}
+.rule:hover{border-color:var(--red-2);background:#141418}
+.rule::before{content:"0" counter(r);font-family:Anton,sans-serif;font-size:40px;color:var(--red);line-height:1}
+.rule h4{font-size:17px;font-weight:700;margin-bottom:2px}
+.rule p{font-size:14.5px;color:var(--muted)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s}
+.step{padding:36px 30px;border-radius:var(--radius);border:1px solid var(--line);position:relative;counter-increment:s;background:linear-gradient(180deg,var(--bg-2),var(--bg))}
+.step::before{content:counter(s);position:absolute;top:24px;right:28px;font-family:Anton,sans-serif;font-size:72px;line-height:1;color:var(--bg-3);-webkit-text-stroke:1px #2f2f35}
+.step h4{font-family:Anton,sans-serif;font-weight:400;font-size:28px;line-height:1.05;text-transform:uppercase;margin:64px 0 10px}
+.step p{color:var(--muted);font-size:15px}
+.step-line{height:3px;width:48px;background:var(--red)}
+
+/* schedule */
+.schedule{background:var(--bg-2);border-top:1px solid var(--line)}
+.panel{display:none}
+.panel.active{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}}
+.days{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.day{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:22px 18px;min-height:150px;position:relative}
+.day.today{border-color:var(--red);box-shadow:0 0 0 1px var(--red) inset,0 18px 40px -18px var(--red-glow)}
+.day.today::after{content:"HOJE";position:absolute;top:-10px;left:16px;background:var(--red);color:#fff;font-size:10px;font-weight:800;letter-spacing:.18em;padding:3px 8px;border-radius:4px}
+.day h5{font-family:Anton,sans-serif;font-weight:400;font-size:22px;text-transform:uppercase;margin-bottom:12px}
+.day h5 em{font-style:normal;font-family:Inter;font-size:10px;font-weight:800;letter-spacing:.14em;color:var(--red);vertical-align:middle;margin-left:4px}
+.slot{font-size:15px;font-weight:600;padding:6px 0;border-top:1px dashed var(--line);font-variant-numeric:tabular-nums}
+.slot:first-of-type{border-top:0}
+.slot small{display:block;font-size:11.5px;color:var(--dim);font-weight:600;letter-spacing:.04em}
+.day.off .slot{color:var(--dim)}
+.sched-note{margin-top:20px;display:flex;gap:12px;align-items:center;color:var(--muted);font-size:14px}
+.sched-note svg{width:18px;height:18px;color:var(--red);flex:none}
+
+/* contact / final cta */
+.final{padding:0 0 120px;background:var(--bg-2)}
+.final-card{position:relative;overflow:hidden;border-radius:24px;padding:72px 56px;background:linear-gradient(120deg,var(--red) 0%,var(--red-2) 60%,#4a0410 100%);isolation:isolate}
+.final-card::before{content:"";position:absolute;right:-120px;top:50%;width:520px;height:520px;transform:translateY(-50%);border-radius:50%;border:2px solid rgba(255,255,255,.18);z-index:-1;
+  box-shadow:0 0 0 60px rgba(255,255,255,.04),0 0 0 120px rgba(255,255,255,.03)}
+.final-card h2{font-size:clamp(44px,6vw,84px);max-width:760px}
+.final-card > p{font-size:18px;color:rgba(255,255,255,.85);max-width:520px;margin:20px 0 36px}
+.final-card .btn-dark{background:#0a0a0b;color:#fff}
+.final-card .btn-dark:hover{transform:translateY(-2px);background:#000}
+.final-card .btn-line{border-color:rgba(255,255,255,.55);color:#fff}
+.final-card .btn-line:hover{border-color:#fff;transform:translateY(-2px)}
+.contacts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.contact{display:flex;gap:16px;align-items:center;padding:24px;border:1px solid var(--line);border-radius:var(--radius);background:var(--bg);transition:border-color .25s,transform .25s}
+.contact:hover{border-color:var(--red-2);transform:translateY(-3px)}
+.contact .ci{width:48px;height:48px;border-radius:12px;background:var(--bg-3);display:grid;place-items:center;color:var(--red);flex:none}
+.contact .ci svg{width:24px;height:24px}
+.contact small{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);font-weight:700}
+.contact b{font-size:16px;font-weight:700}
+
+footer{padding:48px 0 40px;border-top:1px solid var(--line);color:var(--dim);font-size:13px}
+.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+.foot .legal{max-width:620px;line-height:1.55}
+
+/* floating whatsapp */
+.fab{position:fixed;right:22px;bottom:22px;z-index:60;width:62px;height:62px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 12px 30px -6px rgba(37,211,102,.55);transition:transform .2s}
+.fab:hover{transform:scale(1.08)}
+.fab svg{width:32px;height:32px;color:#06260f}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}*{animation:none!important;transition:none!important}}
+
+/* responsive */
+@media (max-width:1024px){
+  .services{grid-template-columns:1fr}
+  .prog-grid{grid-template-columns:1fr}
+  .prog.big{grid-row:auto;min-height:420px}
+  .days{grid-template-columns:repeat(3,1fr)}
+  .safety-in{grid-template-columns:1fr;gap:40px}
+}
+@media (max-width:860px){
+  .nav-links,.nav-cta{display:none}
+  .burger{display:block}
+  nav.open{background:rgba(10,10,11,.97)}
+  nav.open .nav-links{display:flex;flex-direction:column;position:absolute;top:76px;left:0;right:0;padding:24px;gap:20px;background:rgba(10,10,11,.97);border-bottom:1px solid var(--line);font-size:18px}
+  .hero-in{grid-template-columns:1fr}
+  .reticle{max-width:300px;order:-1;margin-bottom:-10px}
+  .reticle-tag{display:none}
+  .steps,.contacts{grid-template-columns:1fr}
+  .final-card{padding:52px 28px}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  section{padding:88px 0}
+  .services,.prog-grid{grid-template-columns:1fr}
+  .prog.big{grid-column:auto}
+  .prog.big h3{font-size:48px}
+  .prog.big .prog-bigtxt{font-size:120px}
+  .days{grid-template-columns:repeat(2,1fr)}
+  .hero-stats{gap:28px}
+  .btn{width:100%}
+  .marquee span{font-size:20px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a href="#topo" class="brand" aria-label="Parabellum Jaraguá">
+      <!-- Troque o SVG abaixo pelo logo oficial: <img src="logo.png" alt="" width="44" height="44"> -->
+      <span class="brand-mark"><img src="assets/img/logo.png" alt="" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5" fill="#c8102e" stroke="none"/><path d="M12 1v5M12 18v5M1 12h5M18 12h5"/></svg></span>
+      <span class="brand-txt">PARABELLUM<small>JARAGUÁ · CAÇA E TIRO</small></span>
+    </a>
+    <div class="nav-links">
+      <a href="#servicos">Serviços</a>
+      <a href="#modalidades">Modalidades</a>
+      <a href="#horarios">Horários</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <a class="btn btn-red nav-cta" href="https://wa.me/5547991170909?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20o%20clube." target="_blank" rel="noopener">Falar no WhatsApp</a>
+    <button class="burger" id="burger" aria-label="Abrir menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="topo">
+  <div class="hero-photo"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="wrap hero-in">
+    <div>
+      <div class="status" id="status"><span class="dot"></span><span id="status-txt">Verificando horário…</span></div>
+      <h1 class="display">
+        Precisão<br>
+        <span class="outline">se treina.</span><br>
+        <span class="slash">Aqui.</span>
+      </h1>
+      <p class="lead">Escola e Clube de Caça e Tiro em <strong>Jaraguá do Sul</strong>. Do primeiro disparo ao IPSC e ao tiro defensivo — com loja e despachante no mesmo endereço.</p>
+      <div class="cta-row">
+        <a class="btn btn-red" href="https://wa.me/5547991170909?text=Ol%C3%A1!%20Quero%20agendar%20uma%20visita%20ao%20estande." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3 0 .2 0 .8-.2 1.4Z"/></svg>
+          Agendar visita
+        </a>
+        <a class="btn btn-ghost" href="#horarios">Ver horários</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>22,9 mil</b><span>seguidores</span></div>
+        <div class="stat"><b>830+</b><span>publicações</span></div>
+        <div class="stat"><b>3 em 1</b><span>tiro · loja · despachante</span></div>
+      </div>
+    </div>
+
+    <div class="reticle" aria-hidden="true">
+      <svg viewBox="0 0 400 400">
+        <defs>
+          <radialGradient id="rg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#c8102e" stop-opacity=".22"/><stop offset="1" stop-color="#c8102e" stop-opacity="0"/></radialGradient>
+        </defs>
+        <circle cx="200" cy="200" r="200" fill="url(#rg)"/>
+        <g class="ret-spin" stroke="#3f3f46" fill="none">
+          <circle cx="200" cy="200" r="186" stroke-dasharray="2 10" stroke-width="2"/>
+        </g>
+        <g class="ret-spin-r" fill="none" stroke="#c8102e" stroke-width="2">
+          <path d="M200 30 a170 170 0 0 1 120 50"/><path d="M200 370 a170 170 0 0 1 -120 -50"/>
+        </g>
+        <g fill="none" stroke="#f4f4f5">
+          <circle cx="200" cy="200" r="140" stroke-opacity=".25" stroke-width="1.5"/>
+          <circle cx="200" cy="200" r="96" stroke-opacity=".55" stroke-width="2"/>
+          <circle cx="200" cy="200" r="52" stroke="#c8102e" stroke-width="2.5"/>
+        </g>
+        <g stroke="#f4f4f5" stroke-width="2" stroke-opacity=".8">
+          <path d="M200 40v118M200 242v118M40 200h118M242 200h118"/>
+        </g>
+        <g stroke="#f4f4f5" stroke-opacity=".5" stroke-width="1.5">
+          <path d="M190 80h20M192 110h16M190 290h20M192 320h16M80 190v20M110 192v16M290 190v20M320 192v16"/>
+        </g>
+        <circle class="ret-dot" cx="200" cy="200" r="6" fill="#c8102e"/>
+      </svg>
+      <div class="reticle-tag t1">Foco · <b>100%</b></div>
+      <div class="reticle-tag t2">Segurança <b>●</b> primeiro</div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Disciplina</span><span>Foco</span><span>Segurança</span><span>Precisão</span><span>Responsabilidade</span>
+    <span>Disciplina</span><span>Foco</span><span>Segurança</span><span>Precisão</span><span>Responsabilidade</span>
+  </div>
+</div>
+
+<!-- ============ SERVIÇOS ============ -->
+<section id="servicos">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="eyebrow">O que fazemos</span>
+        <h2 class="display">Tudo que o atirador<br>precisa, <span class="red">num só lugar.</span></h2>
+      </div>
+      <p>Treino, equipamento e documentação. Três frentes, um padrão: seriedade e segurança.</p>
+    </div>
+
+    <div class="services">
+      <article class="svc rv">
+        <span class="svc-num">01</span>
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></div>
+        <h3>Escola &amp; Clube de Tiro</h3>
+        <p>Estande para tiro esportivo, treinos orientados e cursos para quem está começando ou quer evoluir.</p>
+        <a href="https://wa.me/5547991170909?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20o%20clube%20e%20os%20cursos." target="_blank" rel="noopener">Quero treinar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="svc rv">
+        <span class="svc-num">02</span>
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18l-1.5 12a2 2 0 0 1-2 1.8H6.5a2 2 0 0 1-2-1.8L3 7Z"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg></div>
+        <h3>Loja de Armas &amp; Munições</h3>
+        <p>Armas, munições e acessórios com orientação técnica para escolher o equipamento certo para a sua modalidade.</p>
+        <a href="https://wa.me/5547991170909?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20produtos%20da%20loja." target="_blank" rel="noopener">Consultar produtos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="svc rv">
+        <span class="svc-num">03</span>
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6Z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div>
+        <h3>Despachante</h3>
+        <p>Assessoria na documentação do atirador junto aos órgãos competentes — menos burocracia, mais tempo no estande.</p>
+        <a href="https://wa.me/5547991170909?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20documenta%C3%A7%C3%A3o%20(despachante)." target="_blank" rel="noopener">Falar com despachante <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MODALIDADES ============ -->
+<section class="programs" id="modalidades">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="eyebrow">Modalidades &amp; programas</span>
+        <h2 class="display">Escolha seu<br><span class="red">caminho.</span></h2>
+      </div>
+      <p>Esporte, defesa pessoal ou começar do zero com acompanhamento.</p>
+    </div>
+
+    <div class="prog-grid">
+      <article class="prog big rv">
+        <span class="prog-bigtxt">IPSC</span>
+        <span class="tag">Tiro esportivo</span>
+        <h3>IPSC</h3>
+        <p>Tiro prático com velocidade, precisão e tomada de decisão. Para quem quer competir e levar o treino a outro nível.</p>
+        <ul><li>Velocidade</li><li>Precisão</li><li>Movimentação</li><li>Competição</li></ul>
+      </article>
+      <article class="prog rv">
+        <span class="tag">Defesa pessoal</span>
+        <h3>Tiro Defensivo</h3>
+        <p>Técnica, controle e tomada de decisão para o uso responsável da arma na defesa pessoal.</p>
+        <ul><li>Saque</li><li>Recarga</li><li>Panes</li><li>Decisão sob estresse</li></ul>
+      </article>
+      <article class="prog rv">
+        <span class="tag">Formação</span>
+        <h3>Cursos</h3>
+        <p>Do básico ao avançado, com instrução focada em fundamentos e segurança.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SEGURANÇA ============ -->
+<section id="seguranca">
+  <div class="wrap safety-in">
+    <div class="rv">
+      <span class="eyebrow">Nossa cultura</span>
+      <h2 class="display">Segurança não<br>é regra.<br><span class="red">É fundamento.</span></h2>
+      <p>No estande, todo atirador segue as regras do clube para a prática do tiro esportivo. Elas começam pelos fundamentos universais de manuseio seguro.</p>
+      <a class="btn btn-ghost" href="https://wa.me/5547991170909?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20as%20regras%20do%20estande." target="_blank" rel="noopener">Conhecer as regras do estande</a>
+    </div>
+    <div class="rules">
+      <div class="rule rv"><div><h4>Toda arma está sempre carregada</h4><p>Trate qualquer arma como municiada, sem exceção.</p></div></div>
+      <div class="rule rv"><div><h4>Cano para direção segura</h4><p>Nunca aponte para o que você não pretende atingir.</p></div></div>
+      <div class="rule rv"><div><h4>Dedo fora do gatilho</h4><p>Só no gatilho com o alvo alinhado e a decisão tomada.</p></div></div>
+      <div class="rule rv"><div><h4>Conheça o alvo e o que há além</h4><p>Identifique o alvo e o anteparo antes de cada disparo.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRIMEIRA VEZ ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="eyebrow">Primeira vez?</span>
+        <h2 class="display">Do zero ao estande<br>em <span class="red">3 passos.</span></h2>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div class="step-line"></div><h4>Chame no WhatsApp</h4><p>Conte seu objetivo: conhecer o esporte, fazer um curso ou se associar.</p></div>
+      <div class="step rv"><div class="step-line"></div><h4>Agende o horário</h4><p>Combinamos o melhor dia dentro do horário de funcionamento do estande.</p></div>
+      <div class="step rv"><div class="step-line"></div><h4>Venha atirar</h4><p>Briefing de segurança, instrução e seus primeiros disparos com acompanhamento.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HORÁRIOS ============ -->
+<section class="schedule" id="horarios">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="eyebrow">Horários</span>
+        <h2 class="display">Planeje seu<br><span class="red">próximo treino.</span></h2>
+      </div>
+    </div>
+
+    <div class="panel active" id="p-tiro" role="tabpanel">
+      <div class="days">
+        <div class="day" data-d="1"><h5>Seg</h5><div class="slot">17h – 21h<small>Estande a partir das 18h</small></div></div>
+        <div class="day" data-d="2"><h5>Ter</h5><div class="slot">17h – 21h<small>Estande a partir das 18h</small></div></div>
+        <div class="day" data-d="3"><h5>Qua</h5><div class="slot">17h – 21h<small>Estande a partir das 18h</small></div></div>
+        <div class="day" data-d="4"><h5>Qui</h5><div class="slot">17h – 21h<small>Estande a partir das 18h</small></div></div>
+        <div class="day" data-d="5"><h5>Sex</h5><div class="slot">17h – 21h<small>Estande a partir das 18h</small></div></div>
+        <div class="day" data-d="6"><h5>Sáb</h5><div class="slot">9h – 12h</div><div class="slot">13h30 – 17h</div></div>
+      </div>
+      <div class="sched-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>Domingos e feriados: fechado. Avisos de fechamento extraordinário são publicados no Instagram.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL + CONTATO ============ -->
+<section class="final" id="contato">
+  <div class="wrap">
+    <div class="final-card rv">
+      <h2 class="display">Seu primeiro disparo<br>começa com uma mensagem.</h2>
+      <p>Tire dúvidas, agende sua visita ou fale sobre cursos, produtos e documentação.</p>
+      <div class="cta-row">
+        <a class="btn btn-dark" href="https://wa.me/5547991170909?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20conhecer%20o%20clube." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        <a class="btn btn-line" href="https://maps.app.goo.gl/anBwqZCChrtQSoP77" target="_blank" rel="noopener">Como chegar</a>
+      </div>
+    </div>
+
+    <div class="contacts">
+      <a class="contact rv" href="https://wa.me/5547991170909" target="_blank" rel="noopener">
+        <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></span>
+        <span><small>Clube de Tiro</small><b>(47) 99117-0909</b></span>
+      </a>
+      <a class="contact rv" href="https://maps.app.goo.gl/anBwqZCChrtQSoP77" target="_blank" rel="noopener">
+        <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+        <span><small>Endereço</small><b>Como chegar</b></span>
+      </a>
+      <a class="contact rv" href="https://www.instagram.com/parabellum_jaragua/" target="_blank" rel="noopener">
+        <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span>
+        <span><small>Instagram</small><b>@parabellum_jaragua</b></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div class="brand"><span class="brand-mark"><img src="assets/img/logo.png" alt="" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5" fill="#c8102e" stroke="none"/><path d="M12 1v5M12 18v5M1 12h5M18 12h5"/></svg></span><span class="brand-txt">PARABELLUM<small>JARAGUÁ DO SUL · SC</small></span></div>
+    <p class="legal">A aquisição de armas e munições está sujeita à legislação vigente e às autorizações dos órgãos competentes. Prática esportiva responsável, sempre sob as regras do clube. © <span id="yr"></span> Parabellum Jaraguá.</p>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/5547991170909?text=Ol%C3%A1!%20Vim%20pelo%20site." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3 0 .2 0 .8-.2 1.4Z"/></svg>
+</a>
+
+<script>
+(function(){
+  // nav
+  var nav=document.getElementById('nav');
+  addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>20)},{passive:true});
+  document.getElementById('burger').addEventListener('click',function(){nav.classList.toggle('open')});
+  nav.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open')})});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  // horário em Jaraguá do Sul (America/Sao_Paulo)
+  var parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/Sao_Paulo',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+  var get=function(t){return (parts.find(function(p){return p.type===t})||{}).value};
+  var dow={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[get('weekday')];
+  var mins=(parseInt(get('hour'),10)%24)*60+parseInt(get('minute'),10);
+  // [abre, fecha] em minutos
+  var H={1:[[1020,1260]],2:[[1020,1260]],3:[[1020,1260]],4:[[1020,1260]],5:[[1020,1260]],6:[[540,720],[810,1020]]};
+  var today=H[dow]||[], open=today.some(function(r){return mins>=r[0]&&mins<r[1]});
+  var st=document.getElementById('status'), tx=document.getElementById('status-txt');
+  var fmt=function(m){var h=Math.floor(m/60),mm=m%60;return h+'h'+(mm?String(mm).padStart(2,'0'):'')};
+  if(open){
+    var cur=today.find(function(r){return mins>=r[0]&&mins<r[1]});
+    st.classList.add('open');tx.textContent='Aberto agora · até '+fmt(cur[1]);
+  }else{
+    st.classList.add('closed');
+    var nxt=today.find(function(r){return mins<r[0]});
+    if(nxt){tx.textContent='Fechado · abre hoje às '+fmt(nxt[0])}
+    else{
+      for(var i=1;i<=7;i++){var d=(dow+i)%7;if(H[d]){var n=['domingo','segunda','terça','quarta','quinta','sexta','sábado'][d];tx.textContent='Fechado · abre '+(i===1?'amanhã':n)+' às '+fmt(H[d][0][0]);break}}
+    }
+  }
+  document.querySelectorAll('.day[data-d="'+dow+'"]').forEach(function(el){el.classList.add('today')});
+
+  // reveal
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in')},(i%4)*90);io.unobserve(e.target)}})},{threshold:.12});
+    document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  }else{document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')})}
+})();
+</script>
+</body>
+</html>
